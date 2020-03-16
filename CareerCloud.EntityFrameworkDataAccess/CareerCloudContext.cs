@@ -8,8 +8,14 @@ using System.Text;
 
 namespace CareerCloud.EntityFrameworkDataAccess
 {
-    class CareerCloudContext : DbContext
+    public class CareerCloudContext : DbContext
     {
+
+        public CareerCloudContext(DbContextOptions<CareerCloudContext> options) : base(options)
+        {
+
+
+        }
         
         public DbSet<ApplicantEducationPoco> ApplicantEducations { get; set; }
         public DbSet<ApplicantJobApplicationPoco> ApplicantJobApplications{ get; set; }
@@ -212,13 +218,13 @@ entity.HasOne(e => e.SystemLanguageCode)
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var config = new ConfigurationBuilder();
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json");
-            config.AddJsonFile(path, false);
-            var root = config.Build();
-            string _connStr = root.GetSection("ConnectionStrings").GetSection("DataConnection").Value;
-            optionsBuilder.UseSqlServer(_connStr);
-            base.OnConfiguring(optionsBuilder);
+            //var config = new ConfigurationBuilder();
+            //var path = Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json");
+            //config.AddJsonFile(path, false);
+            //var root = config.Build();
+            //string _connStr = root.GetSection("ConnectionStrings").GetSection("DataConnection").Value;
+            //optionsBuilder.UseSqlServer(_connStr);
+            //base.OnConfiguring(optionsBuilder);
         }
       
       
