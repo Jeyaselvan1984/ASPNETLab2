@@ -76,3 +76,10 @@
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+@section Scripts
+{
+    @*@{ await Html.PartialAsync("_Applicant_Profile");}*@
+    @{ await Html.RenderPartialAsync("~Views/ApplicantShared/_Applicant_Resume.cshtml");}
+}
+
+
