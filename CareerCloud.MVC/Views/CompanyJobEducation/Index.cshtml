@@ -1,4 +1,10 @@
-﻿@model IEnumerable<CareerCloud.Pocos.ApplicantResumePoco>
+﻿@model IEnumerable<CareerCloud.Pocos.CompanyJobEducationPoco>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -7,13 +13,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Resume)
+                @Html.DisplayNameFor(model => model.Major)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LastUpdated)
+                @Html.DisplayNameFor(model => model.Importance)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ApplicantProfile)
+                @Html.DisplayNameFor(model => model.TimeStamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyJob)
             </th>
             <th></th>
         </tr>
@@ -22,13 +31,16 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Resume)
+                @Html.DisplayFor(modelItem => item.Major)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LastUpdated)
+                @Html.DisplayFor(modelItem => item.Importance)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ApplicantProfile.Id)
+                @Html.DisplayFor(modelItem => item.TimeStamp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyJob.Id)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

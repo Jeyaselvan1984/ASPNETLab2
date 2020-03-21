@@ -1,8 +1,11 @@
-﻿@model IEnumerable<CareerCloud.Pocos.ApplicantProfilePoco>
+﻿@model IEnumerable<CareerCloud.Pocos.CompanyLocationPoco>
 
-<div>
-    <partial name="_Applicant_Profile" />
-</div>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -10,13 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CurrentSalary)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CurrentRate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Currency)
+                @Html.DisplayNameFor(model => model.CountryCode)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Province)
@@ -34,10 +31,7 @@
                 @Html.DisplayNameFor(model => model.TimeStamp)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SystemCountryCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SecurityLogin)
+                @Html.DisplayNameFor(model => model.CompanyProfile)
             </th>
             <th></th>
         </tr>
@@ -46,13 +40,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.CurrentSalary)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CurrentRate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Currency)
+                @Html.DisplayFor(modelItem => item.CountryCode)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Province)
@@ -70,10 +58,7 @@
                 @Html.DisplayFor(modelItem => item.TimeStamp)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SystemCountryCode.Code)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SecurityLogin.Id)
+                @Html.DisplayFor(modelItem => item.CompanyProfile.Id)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

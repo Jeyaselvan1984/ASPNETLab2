@@ -57,7 +57,12 @@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
+                <a asp-action="Index" asp-controller="CompanyJobDescription" asp-route-id="@item.Id"> Description </a> |
+                <a asp-action="Index" asp-controller="CompanyJob" asp-route-id="@item.Id"> Jobs </a> |
+                <a asp-action="Index" asp-controller="CompanyJobEducation" asp-route-id="@item.Id"> Educations</a> |
+                <a asp-action="Index" asp-controller="CompanyJobSkill" asp-route-id="@item.Id"> Skills </a> |
+                <a asp-action="Index" asp-controller="CompanyLocation" asp-route-id="@item.Id">Locations</a>
             </td>
         </tr>
 }

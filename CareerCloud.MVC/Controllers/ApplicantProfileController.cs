@@ -19,6 +19,7 @@ namespace CareerCloud.MVC.Controllers
             _context = context;
         }
 
+    
         // GET: ApplicantProfile
         public async Task<IActionResult> Index()
         {
@@ -37,6 +38,12 @@ namespace CareerCloud.MVC.Controllers
             var applicantProfilePoco = await _context.ApplicantProfiles
                 .Include(a => a.SecurityLogin)
                 .Include(a => a.SystemCountryCode)
+                .Include(a => a.ApplicantEducation)
+                .Include(a => a.ApplicantResume)
+                .Include(a => a.ApplicantSkill)
+                .Include(a => a.ApplicantJobApplication)
+                .Include(a => a.ApplicantWorkHistory)
+
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (applicantProfilePoco == null)
             {
@@ -45,6 +52,26 @@ namespace CareerCloud.MVC.Controllers
 
             return View(applicantProfilePoco);
         }
+
+        //// GET: ApplicantProfile/Details/5
+        //public async Task<IActionResult> Details(Guid? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var applicantProfilePoco = await _context.ApplicantProfiles
+        //        .Include(a => a.SecurityLogin)
+        //        .Include(a => a.SystemCountryCode)
+        //        .FirstOrDefaultAsync(m => m.Id == id);
+        //    if (applicantProfilePoco == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(applicantProfilePoco);
+        //}
 
         // GET: ApplicantProfile/Create
         public IActionResult Create()

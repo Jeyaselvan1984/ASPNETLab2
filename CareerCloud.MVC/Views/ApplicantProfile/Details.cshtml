@@ -1,6 +1,9 @@
 ﻿@model CareerCloud.Pocos.ApplicantProfilePoco
 
+
+
 @{
+    
     ViewData["Title"] = "Details";
 }
 
@@ -76,10 +79,20 @@
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
-@section Scripts
-{
-    @*@{ await Html.PartialAsync("_Applicant_Profile");}*@
-    @{ await Html.RenderPartialAsync("~Views/ApplicantShared/_Applicant_Resume.cshtml");}
-}
+<div>  
+    <partial name="_ApplicantResumes" model="@Model.ApplicantResume.ToList()" />   
+</div>
+<div>
+    <partial name="_ApplicantEducations" model="@Model.ApplicantEducation.ToList()" />
+</div>
+<div>
+    <partial name="_ApplicantSkills" model="@Model.ApplicantSkill.ToList()" />
+</div>
+<div>
+    <partial name="_ApplicantWorkHistory" model="@Model.ApplicantWorkHistory.ToList()" />
+</div>
+<div>
+    <partial name="_ApplicantJobApplications" model="@Model.ApplicantJobApplication.ToList()" />
+</div>
 
 

@@ -19,12 +19,6 @@
     <ProjectReference Include="..\CareerCloud.Pocos\CareerCloud.Pocos.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Update="Views\ApplicantShared\_Applicant_Profile.cshtml">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
 
 
 </Project>
